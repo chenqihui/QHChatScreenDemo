@@ -8,8 +8,6 @@
 
 #import "QHChatScreenView.h"
 
-#import "QHChatScreenViewCell.h"
-
 #import "NSTimer+QHEOCBlocksSupport.h"
 
 #import "QHGifTextViewCell.h"
@@ -103,18 +101,11 @@ typedef NS_ENUM(NSUInteger, CellType) {
     else {
         self.bSrollBottomAnimation = NO;
     }
-
-//    UINib *cellNib = [UINib nibWithNibName:@"QHChatScreenViewCell" bundle:nil];
-//    [self.mainTableView registerNib:cellNib forCellReuseIdentifier:CHATCELL_IDENTIFIER];
     
     UINib *cellNib = [UINib nibWithNibName:@"QHGifTextViewCell" bundle:nil];
     [self.mainTableView registerNib:cellNib forCellReuseIdentifier:CHATCELL_IDENTIFIER];
     UINib *cellNibHighlight = [UINib nibWithNibName:@"QHHighlightViewCell" bundle:nil];
     [self.mainTableView registerNib:cellNibHighlight forCellReuseIdentifier:HIGHLIGHT_IDENTIFIER];
-    
-//    self.chatDataPrototyCell = [self.mainTableView dequeueReusableCellWithIdentifier:CHATCELL_IDENTIFIER];
-//    self.chatDataPrototyCell.translatesAutoresizingMaskIntoConstraints = NO;
-//    self.chatDataPrototyCell.contentLabel.translatesAutoresizingMaskIntoConstraints = NO;
 }
 
 - (void)setupData {
@@ -125,10 +116,6 @@ typedef NS_ENUM(NSUInteger, CellType) {
     self.bInBottom = YES;
     self.bReturnScrollScreenView = NO;
     self.bReloadByTimer = NO;
-    
-//    self.cellWidth = [UIScreen mainScreen].bounds.size.width - 20;
-//    CGSize size = [QHChatScreenBaseUtil calculateString:@"陈" size:CGSizeMake(CGFLOAT_MAX, 100) font:FONT_CHATSCREEN_BIGGER];
-//    self.cellHeigth = size.height;
     
     self.openReloadTimerCount = 0;
     self.isReloadTimerRun = NO;
@@ -348,15 +335,6 @@ typedef NS_ENUM(NSUInteger, CellType) {
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    QHChatScreenViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CHATCELL_IDENTIFIER];
-//    cell.cellDelegate = self;
-//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//    NSMutableAttributedString *chatContent = self.chatDataList[indexPath.row][0];
-//    cell.contentLabel.attributedText = chatContent;
-////    [cell addHeaderTouches:[self.chatDataList[indexPath.row][2] CGRectValue]];
-//    [cell sizeToFit];
-    
-    
     UITableViewCell *cellResult = nil;
     NSInteger cellType = [self.chatDataList[indexPath.row][2] integerValue];
     switch (cellType) {
@@ -373,6 +351,7 @@ typedef NS_ENUM(NSUInteger, CellType) {
             cell.gifTextViewDelegate = self;
             NSMutableAttributedString *chatContent = nil;
             NSArray *contentDataArray = self.chatDataList[indexPath.row];
+            //使用缓存
             id contentData = contentDataArray[0];
             if ([contentData isKindOfClass:[NSMutableAttributedString class]] == YES) {
                 chatContent = contentData;
@@ -417,7 +396,6 @@ typedef NS_ENUM(NSUInteger, CellType) {
 //    else {
 //        return [self.chatDataList[indexPath.row][3] floatValue];
 //    }
-
     return UITableViewAutomaticDimension;
 }
 
@@ -452,9 +430,6 @@ typedef NS_ENUM(NSUInteger, CellType) {
     if (!decelerate) {
         [self scrollChatScreenToBottom:NO];
     }
-//    if ([self.chatDelegate respondsToSelector:@selector(didEndDragging:willDecelerate:)]) {
-//        [self.chatDelegate didEndDragging:scrollView willDecelerate:decelerate];
-//    }
 }
 
 #pragma mark - QHGifTextViewCellDelegate
@@ -466,7 +441,6 @@ typedef NS_ENUM(NSUInteger, CellType) {
             
             NSIndexPath *indexPath = [self.mainTableView indexPathForCell:viewCell];
             NSDictionary *data = self.chatDataList[indexPath.row][1];
-            //DataSource
             if (bAction == YES) {
                 [self.chatDelegate chatScreenView:self didSelectRowWithData:data];
             }
@@ -564,9 +538,7 @@ typedef NS_ENUM(NSUInteger, CellType) {
 
 - (void)reloadChatScreen:(BOOL)bReload {
     self.bControlTimerClose = !bReload;
-//    if ([self.chatDelegate getIsAnchor]) {
-        [self p_reloadChatScreen:bReload];
-//    }
+    [self p_reloadChatScreen:bReload];
 }
 
 - (void)clearChatScreen {
