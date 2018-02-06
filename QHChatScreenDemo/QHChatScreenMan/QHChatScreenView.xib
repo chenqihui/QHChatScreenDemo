@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="QHChatScreenView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="392-qg-czg">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="Lgy-RP-Yzi" appends="YES" id="n4e-YY-lXx"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="392-qg-czg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="LcE-OY-hf0"/>
+                <constraint firstAttribute="trailing" secondItem="392-qg-czg" secondAttribute="trailing" id="Lpm-0Z-Jak"/>
+                <constraint firstAttribute="bottom" secondItem="392-qg-czg" secondAttribute="bottom" id="dja-lm-QZk"/>
+                <constraint firstItem="392-qg-czg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gEu-Mh-Gxh"/>
+            </constraints>
+            <connections>
+                <outlet property="mainTableView" destination="392-qg-czg" id="Qeg-UW-cnC"/>
+            </connections>
+        </view>
+        <tapGestureRecognizer id="Lgy-RP-Yzi">
+            <connections>
+                <action selector="tapChatScreenAtion:" destination="iN0-l3-epB" id="MnN-vx-wa2"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>

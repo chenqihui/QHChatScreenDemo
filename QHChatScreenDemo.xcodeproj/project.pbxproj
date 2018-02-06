@@ -1,0 +1,573 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7491D8FF20275D700047339E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491D8FE20275D700047339E /* AppDelegate.m */; };
+		7491D90320275D700047339E /* QHTableRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491D90220275D700047339E /* QHTableRootViewController.m */; };
+		7491D90620275D700047339E /* QHDetailRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491D90520275D700047339E /* QHDetailRootViewController.m */; };
+		7491D90A20275D700047339E /* QHTableSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491D90920275D700047339E /* QHTableSubViewController.m */; };
+		7491D90C20275D700047339E /* QHTableSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7491D90B20275D700047339E /* QHTableSubViewController.xib */; };
+		7491D90F20275D700047339E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491D90E20275D700047339E /* ViewController.m */; };
+		7491D91220275D700047339E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7491D91020275D700047339E /* Main.storyboard */; };
+		7491D91420275D700047339E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7491D91320275D700047339E /* Assets.xcassets */; };
+		7491D91720275D700047339E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7491D91520275D700047339E /* LaunchScreen.storyboard */; };
+		7491D91A20275D700047339E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491D91920275D700047339E /* main.m */; };
+		7491D9A020275FC00047339E /* QHChatScreenViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491D96E20275FC00047339E /* QHChatScreenViewCell.m */; };
+		7491D9A120275FC00047339E /* QHGifTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491D97120275FC00047339E /* QHGifTextViewCell.m */; };
+		7491D9A220275FC00047339E /* QHGifTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491D97220275FC00047339E /* QHGifTextAttachment.m */; };
+		7491D9A320275FC00047339E /* QHGifTextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7491D97320275FC00047339E /* QHGifTextViewCell.xib */; };
+		7491D9A420275FC00047339E /* QHGifTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491D97420275FC00047339E /* QHGifTextView.m */; };
+		7491D9A520275FC00047339E /* QHChatScreenViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7491D97B20275FC00047339E /* QHChatScreenViewCell.xib */; };
+		7491D9A620275FC00047339E /* QHChatScreenConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491D97C20275FC00047339E /* QHChatScreenConfig.m */; };
+		7491D9B420275FC00047339E /* QHChatScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491D99920275FC00047339E /* QHChatScreenView.m */; };
+		7491D9B520275FC00047339E /* QHChatScreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7491D99A20275FC00047339E /* QHChatScreenView.xib */; };
+		7491D9B620275FC00047339E /* QHHighlightViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7491D99C20275FC00047339E /* QHHighlightViewCell.xib */; };
+		7491D9B720275FC00047339E /* QHHighlightViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491D99E20275FC00047339E /* QHHighlightViewCell.m */; };
+		7491D9C1202760570047339E /* QHChatScreenBaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491D9BA202760560047339E /* QHChatScreenBaseUtil.m */; };
+		7491D9C2202760570047339E /* QHChatScreenBaseUtil+Chat.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491D9BB202760560047339E /* QHChatScreenBaseUtil+Chat.m */; };
+		7491D9C3202760570047339E /* QHChatScreenBaseUtil+SystemNotice.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491D9BE202760560047339E /* QHChatScreenBaseUtil+SystemNotice.m */; };
+		7491D9C4202760570047339E /* QHChatScreenBaseUtil+Welcome.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491D9BF202760560047339E /* QHChatScreenBaseUtil+Welcome.m */; };
+		7491D9CE2027778E0047339E /* SHChatScreenKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491D9CD2027778E0047339E /* SHChatScreenKey.m */; };
+		7491D9D92027FF450047339E /* QHChatScreenDataSourceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491D9D82027FF450047339E /* QHChatScreenDataSourceObject.m */; };
+		7491D9DC202811AB0047339E /* QHChatScreenBaseUtil+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491D9DB202811AB0047339E /* QHChatScreenBaseUtil+Base.m */; };
+		7491D9E020282EAA0047339E /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491D9DE20282EA90047339E /* NSString+HTML.m */; };
+		7491D9F120295CC40047339E /* NSTimer+QHEOCBlocksSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491D9F020295CC40047339E /* NSTimer+QHEOCBlocksSupport.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7491D8FA20275D700047339E /* QHChatScreenDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QHChatScreenDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7491D8FD20275D700047339E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7491D8FE20275D700047339E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7491D90120275D700047339E /* QHTableRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = QHTableRootViewController.h; path = QHTableController/QHTableRootViewController.h; sourceTree = "<group>"; };
+		7491D90220275D700047339E /* QHTableRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = QHTableRootViewController.m; path = QHTableController/QHTableRootViewController.m; sourceTree = "<group>"; };
+		7491D90420275D700047339E /* QHDetailRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = QHDetailRootViewController.h; path = QHTableController/QHDetailRootViewController.h; sourceTree = "<group>"; };
+		7491D90520275D700047339E /* QHDetailRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = QHDetailRootViewController.m; path = QHTableController/QHDetailRootViewController.m; sourceTree = "<group>"; };
+		7491D90820275D700047339E /* QHTableSubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = QHTableSubViewController.h; path = QHTableSubController/QHTableSubViewController.h; sourceTree = "<group>"; };
+		7491D90920275D700047339E /* QHTableSubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = QHTableSubViewController.m; path = QHTableSubController/QHTableSubViewController.m; sourceTree = "<group>"; };
+		7491D90B20275D700047339E /* QHTableSubViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = QHTableSubViewController.xib; path = QHTableSubController/QHTableSubViewController.xib; sourceTree = "<group>"; };
+		7491D90D20275D700047339E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7491D90E20275D700047339E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7491D91120275D700047339E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7491D91320275D700047339E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7491D91620275D700047339E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7491D91820275D700047339E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7491D91920275D700047339E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7491D96E20275FC00047339E /* QHChatScreenViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHChatScreenViewCell.m; sourceTree = "<group>"; };
+		7491D96F20275FC00047339E /* QHChatScreenConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHChatScreenConfig.h; sourceTree = "<group>"; };
+		7491D97120275FC00047339E /* QHGifTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHGifTextViewCell.m; sourceTree = "<group>"; };
+		7491D97220275FC00047339E /* QHGifTextAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHGifTextAttachment.m; sourceTree = "<group>"; };
+		7491D97320275FC00047339E /* QHGifTextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QHGifTextViewCell.xib; sourceTree = "<group>"; };
+		7491D97420275FC00047339E /* QHGifTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHGifTextView.m; sourceTree = "<group>"; };
+		7491D97520275FC00047339E /* QHGifTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHGifTextViewCell.h; sourceTree = "<group>"; };
+		7491D97620275FC00047339E /* QHGifTextAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHGifTextAttachment.h; sourceTree = "<group>"; };
+		7491D97720275FC00047339E /* QHGifTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHGifTextView.h; sourceTree = "<group>"; };
+		7491D97820275FC00047339E /* QHChatScreenDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHChatScreenDelegate.h; sourceTree = "<group>"; };
+		7491D97920275FC00047339E /* QHChatScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHChatScreenView.h; sourceTree = "<group>"; };
+		7491D97A20275FC00047339E /* QHChatScreenViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHChatScreenViewCell.h; sourceTree = "<group>"; };
+		7491D97B20275FC00047339E /* QHChatScreenViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QHChatScreenViewCell.xib; sourceTree = "<group>"; };
+		7491D97C20275FC00047339E /* QHChatScreenConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHChatScreenConfig.m; sourceTree = "<group>"; };
+		7491D99920275FC00047339E /* QHChatScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHChatScreenView.m; sourceTree = "<group>"; };
+		7491D99A20275FC00047339E /* QHChatScreenView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QHChatScreenView.xib; sourceTree = "<group>"; };
+		7491D99C20275FC00047339E /* QHHighlightViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QHHighlightViewCell.xib; sourceTree = "<group>"; };
+		7491D99D20275FC00047339E /* QHHighlightViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHHighlightViewCell.h; sourceTree = "<group>"; };
+		7491D99E20275FC00047339E /* QHHighlightViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHHighlightViewCell.m; sourceTree = "<group>"; };
+		7491D9B8202760560047339E /* QHChatScreenBaseUtil+Welcome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QHChatScreenBaseUtil+Welcome.h"; sourceTree = "<group>"; };
+		7491D9B9202760560047339E /* QHChatScreenBaseUtil+SystemNotice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QHChatScreenBaseUtil+SystemNotice.h"; sourceTree = "<group>"; };
+		7491D9BA202760560047339E /* QHChatScreenBaseUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHChatScreenBaseUtil.m; sourceTree = "<group>"; };
+		7491D9BB202760560047339E /* QHChatScreenBaseUtil+Chat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "QHChatScreenBaseUtil+Chat.m"; sourceTree = "<group>"; };
+		7491D9BC202760560047339E /* QHChatScreenUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHChatScreenUtil.h; sourceTree = "<group>"; };
+		7491D9BD202760560047339E /* QHChatScreenBaseUtil+Chat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QHChatScreenBaseUtil+Chat.h"; sourceTree = "<group>"; };
+		7491D9BE202760560047339E /* QHChatScreenBaseUtil+SystemNotice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "QHChatScreenBaseUtil+SystemNotice.m"; sourceTree = "<group>"; };
+		7491D9BF202760560047339E /* QHChatScreenBaseUtil+Welcome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "QHChatScreenBaseUtil+Welcome.m"; sourceTree = "<group>"; };
+		7491D9C0202760560047339E /* QHChatScreenBaseUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHChatScreenBaseUtil.h; sourceTree = "<group>"; };
+		7491D9CA202768800047339E /* QHChatScreenCellDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QHChatScreenCellDelegate.h; sourceTree = "<group>"; };
+		7491D9CC2027778E0047339E /* SHChatScreenKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHChatScreenKey.h; sourceTree = "<group>"; };
+		7491D9CD2027778E0047339E /* SHChatScreenKey.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHChatScreenKey.m; sourceTree = "<group>"; };
+		7491D9D72027FF450047339E /* QHChatScreenDataSourceObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QHChatScreenDataSourceObject.h; sourceTree = "<group>"; };
+		7491D9D82027FF450047339E /* QHChatScreenDataSourceObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QHChatScreenDataSourceObject.m; sourceTree = "<group>"; };
+		7491D9DA202811AB0047339E /* QHChatScreenBaseUtil+Base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QHChatScreenBaseUtil+Base.h"; sourceTree = "<group>"; };
+		7491D9DB202811AB0047339E /* QHChatScreenBaseUtil+Base.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "QHChatScreenBaseUtil+Base.m"; sourceTree = "<group>"; };
+		7491D9DE20282EA90047339E /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
+		7491D9DF20282EA90047339E /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+		7491D9EF20295CC40047339E /* NSTimer+QHEOCBlocksSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+QHEOCBlocksSupport.h"; sourceTree = "<group>"; };
+		7491D9F020295CC40047339E /* NSTimer+QHEOCBlocksSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+QHEOCBlocksSupport.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7491D8F720275D700047339E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7491D8F120275D700047339E = {
+			isa = PBXGroup;
+			children = (
+				7491D8FC20275D700047339E /* QHChatScreenDemo */,
+				7491D8FB20275D700047339E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7491D8FB20275D700047339E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7491D8FA20275D700047339E /* QHChatScreenDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7491D8FC20275D700047339E /* QHChatScreenDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7491D9D32027FE820047339E /* QHChatScreenUserManual */,
+				7491D96C20275FB20047339E /* QHChatScreenMan */,
+				7491D8FD20275D700047339E /* AppDelegate.h */,
+				7491D8FE20275D700047339E /* AppDelegate.m */,
+				7491D90D20275D700047339E /* ViewController.h */,
+				7491D90E20275D700047339E /* ViewController.m */,
+				7491D91020275D700047339E /* Main.storyboard */,
+				7491D91320275D700047339E /* Assets.xcassets */,
+				7491D91520275D700047339E /* LaunchScreen.storyboard */,
+				7491D91820275D700047339E /* Info.plist */,
+				7491D91920275D700047339E /* main.m */,
+				7491D90020275D700047339E /* QHTableController */,
+				7491D90720275D700047339E /* QHTableSubController */,
+			);
+			path = QHChatScreenDemo;
+			sourceTree = "<group>";
+		};
+		7491D90020275D700047339E /* QHTableController */ = {
+			isa = PBXGroup;
+			children = (
+				7491D90120275D700047339E /* QHTableRootViewController.h */,
+				7491D90220275D700047339E /* QHTableRootViewController.m */,
+				7491D90420275D700047339E /* QHDetailRootViewController.h */,
+				7491D90520275D700047339E /* QHDetailRootViewController.m */,
+			);
+			name = QHTableController;
+			sourceTree = "<group>";
+		};
+		7491D90720275D700047339E /* QHTableSubController */ = {
+			isa = PBXGroup;
+			children = (
+				7491D90820275D700047339E /* QHTableSubViewController.h */,
+				7491D90920275D700047339E /* QHTableSubViewController.m */,
+				7491D90B20275D700047339E /* QHTableSubViewController.xib */,
+			);
+			name = QHTableSubController;
+			sourceTree = "<group>";
+		};
+		7491D96C20275FB20047339E /* QHChatScreenMan */ = {
+			isa = PBXGroup;
+			children = (
+				7491D9F220295CD40047339E /* QHBaseUtil */,
+				7491D97820275FC00047339E /* QHChatScreenDelegate.h */,
+				7491D97D20275FC00047339E /* QHChatScreenUtil */,
+				7491D9C6202768100047339E /* QHChatScreenCell */,
+				7491D96F20275FC00047339E /* QHChatScreenConfig.h */,
+				7491D97C20275FC00047339E /* QHChatScreenConfig.m */,
+				7491D97920275FC00047339E /* QHChatScreenView.h */,
+				7491D99920275FC00047339E /* QHChatScreenView.m */,
+				7491D99A20275FC00047339E /* QHChatScreenView.xib */,
+			);
+			path = QHChatScreenMan;
+			sourceTree = "<group>";
+		};
+		7491D97020275FC00047339E /* QHGifTextView */ = {
+			isa = PBXGroup;
+			children = (
+				7491D97720275FC00047339E /* QHGifTextView.h */,
+				7491D97420275FC00047339E /* QHGifTextView.m */,
+				7491D97520275FC00047339E /* QHGifTextViewCell.h */,
+				7491D97120275FC00047339E /* QHGifTextViewCell.m */,
+				7491D97320275FC00047339E /* QHGifTextViewCell.xib */,
+				7491D97620275FC00047339E /* QHGifTextAttachment.h */,
+				7491D97220275FC00047339E /* QHGifTextAttachment.m */,
+			);
+			path = QHGifTextView;
+			sourceTree = "<group>";
+		};
+		7491D97D20275FC00047339E /* QHChatScreenUtil */ = {
+			isa = PBXGroup;
+			children = (
+				7491D9C0202760560047339E /* QHChatScreenBaseUtil.h */,
+				7491D9BA202760560047339E /* QHChatScreenBaseUtil.m */,
+			);
+			path = QHChatScreenUtil;
+			sourceTree = "<group>";
+		};
+		7491D99B20275FC00047339E /* QHOtherCellView */ = {
+			isa = PBXGroup;
+			children = (
+				7491D99D20275FC00047339E /* QHHighlightViewCell.h */,
+				7491D99E20275FC00047339E /* QHHighlightViewCell.m */,
+				7491D99C20275FC00047339E /* QHHighlightViewCell.xib */,
+			);
+			path = QHOtherCellView;
+			sourceTree = "<group>";
+		};
+		7491D9C5202767760047339E /* QHChatScreenExtendUtil */ = {
+			isa = PBXGroup;
+			children = (
+				7491D9BC202760560047339E /* QHChatScreenUtil.h */,
+				7491D9DA202811AB0047339E /* QHChatScreenBaseUtil+Base.h */,
+				7491D9DB202811AB0047339E /* QHChatScreenBaseUtil+Base.m */,
+				7491D9BD202760560047339E /* QHChatScreenBaseUtil+Chat.h */,
+				7491D9BB202760560047339E /* QHChatScreenBaseUtil+Chat.m */,
+				7491D9B9202760560047339E /* QHChatScreenBaseUtil+SystemNotice.h */,
+				7491D9BE202760560047339E /* QHChatScreenBaseUtil+SystemNotice.m */,
+				7491D9B8202760560047339E /* QHChatScreenBaseUtil+Welcome.h */,
+				7491D9BF202760560047339E /* QHChatScreenBaseUtil+Welcome.m */,
+			);
+			path = QHChatScreenExtendUtil;
+			sourceTree = "<group>";
+		};
+		7491D9C6202768100047339E /* QHChatScreenCell */ = {
+			isa = PBXGroup;
+			children = (
+				7491D9CA202768800047339E /* QHChatScreenCellDelegate.h */,
+				7491D97020275FC00047339E /* QHGifTextView */,
+				7491D99B20275FC00047339E /* QHOtherCellView */,
+				7491D9C7202768230047339E /* QHChatScreenViewCell */,
+			);
+			path = QHChatScreenCell;
+			sourceTree = "<group>";
+		};
+		7491D9C7202768230047339E /* QHChatScreenViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7491D97A20275FC00047339E /* QHChatScreenViewCell.h */,
+				7491D96E20275FC00047339E /* QHChatScreenViewCell.m */,
+				7491D97B20275FC00047339E /* QHChatScreenViewCell.xib */,
+			);
+			path = QHChatScreenViewCell;
+			sourceTree = "<group>";
+		};
+		7491D9CB2027772A0047339E /* QHChatScreenKey */ = {
+			isa = PBXGroup;
+			children = (
+				7491D9CC2027778E0047339E /* SHChatScreenKey.h */,
+				7491D9CD2027778E0047339E /* SHChatScreenKey.m */,
+			);
+			path = QHChatScreenKey;
+			sourceTree = "<group>";
+		};
+		7491D9D32027FE820047339E /* QHChatScreenUserManual */ = {
+			isa = PBXGroup;
+			children = (
+				7491D9DD202814830047339E /* QHOtherUtil */,
+				7491D9CB2027772A0047339E /* QHChatScreenKey */,
+				7491D9C5202767760047339E /* QHChatScreenExtendUtil */,
+				7491D9D72027FF450047339E /* QHChatScreenDataSourceObject.h */,
+				7491D9D82027FF450047339E /* QHChatScreenDataSourceObject.m */,
+			);
+			path = QHChatScreenUserManual;
+			sourceTree = "<group>";
+		};
+		7491D9DD202814830047339E /* QHOtherUtil */ = {
+			isa = PBXGroup;
+			children = (
+				7491D9DF20282EA90047339E /* NSString+HTML.h */,
+				7491D9DE20282EA90047339E /* NSString+HTML.m */,
+			);
+			path = QHOtherUtil;
+			sourceTree = "<group>";
+		};
+		7491D9F220295CD40047339E /* QHBaseUtil */ = {
+			isa = PBXGroup;
+			children = (
+				7491D9EF20295CC40047339E /* NSTimer+QHEOCBlocksSupport.h */,
+				7491D9F020295CC40047339E /* NSTimer+QHEOCBlocksSupport.m */,
+			);
+			path = QHBaseUtil;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7491D8F920275D700047339E /* QHChatScreenDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7491D91D20275D700047339E /* Build configuration list for PBXNativeTarget "QHChatScreenDemo" */;
+			buildPhases = (
+				7491D8F620275D700047339E /* Sources */,
+				7491D8F720275D700047339E /* Frameworks */,
+				7491D8F820275D700047339E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QHChatScreenDemo;
+			productName = QHChatScreenDemo;
+			productReference = 7491D8FA20275D700047339E /* QHChatScreenDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7491D8F220275D700047339E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Anakin Network Technology";
+				TargetAttributes = {
+					7491D8F920275D700047339E = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 7491D8F520275D700047339E /* Build configuration list for PBXProject "QHChatScreenDemo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7491D8F120275D700047339E;
+			productRefGroup = 7491D8FB20275D700047339E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7491D8F920275D700047339E /* QHChatScreenDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7491D8F820275D700047339E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7491D90C20275D700047339E /* QHTableSubViewController.xib in Resources */,
+				7491D9B520275FC00047339E /* QHChatScreenView.xib in Resources */,
+				7491D9B620275FC00047339E /* QHHighlightViewCell.xib in Resources */,
+				7491D9A320275FC00047339E /* QHGifTextViewCell.xib in Resources */,
+				7491D91720275D700047339E /* LaunchScreen.storyboard in Resources */,
+				7491D91420275D700047339E /* Assets.xcassets in Resources */,
+				7491D91220275D700047339E /* Main.storyboard in Resources */,
+				7491D9A520275FC00047339E /* QHChatScreenViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7491D8F620275D700047339E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7491D9A020275FC00047339E /* QHChatScreenViewCell.m in Sources */,
+				7491D9B720275FC00047339E /* QHHighlightViewCell.m in Sources */,
+				7491D9C3202760570047339E /* QHChatScreenBaseUtil+SystemNotice.m in Sources */,
+				7491D90620275D700047339E /* QHDetailRootViewController.m in Sources */,
+				7491D9CE2027778E0047339E /* SHChatScreenKey.m in Sources */,
+				7491D9C1202760570047339E /* QHChatScreenBaseUtil.m in Sources */,
+				7491D9DC202811AB0047339E /* QHChatScreenBaseUtil+Base.m in Sources */,
+				7491D90320275D700047339E /* QHTableRootViewController.m in Sources */,
+				7491D9D92027FF450047339E /* QHChatScreenDataSourceObject.m in Sources */,
+				7491D8FF20275D700047339E /* AppDelegate.m in Sources */,
+				7491D90A20275D700047339E /* QHTableSubViewController.m in Sources */,
+				7491D9F120295CC40047339E /* NSTimer+QHEOCBlocksSupport.m in Sources */,
+				7491D9C2202760570047339E /* QHChatScreenBaseUtil+Chat.m in Sources */,
+				7491D9A420275FC00047339E /* QHGifTextView.m in Sources */,
+				7491D9E020282EAA0047339E /* NSString+HTML.m in Sources */,
+				7491D9A220275FC00047339E /* QHGifTextAttachment.m in Sources */,
+				7491D9A120275FC00047339E /* QHGifTextViewCell.m in Sources */,
+				7491D9B420275FC00047339E /* QHChatScreenView.m in Sources */,
+				7491D91A20275D700047339E /* main.m in Sources */,
+				7491D9A620275FC00047339E /* QHChatScreenConfig.m in Sources */,
+				7491D9C4202760570047339E /* QHChatScreenBaseUtil+Welcome.m in Sources */,
+				7491D90F20275D700047339E /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7491D91020275D700047339E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7491D91120275D700047339E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7491D91520275D700047339E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7491D91620275D700047339E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7491D91B20275D700047339E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7491D91C20275D700047339E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7491D91E20275D700047339E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JC9Y4K55DX;
+				INFOPLIST_FILE = QHChatScreenDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chen.QHChatScreenDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7491D91F20275D700047339E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JC9Y4K55DX;
+				INFOPLIST_FILE = QHChatScreenDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chen.QHChatScreenDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7491D8F520275D700047339E /* Build configuration list for PBXProject "QHChatScreenDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7491D91B20275D700047339E /* Debug */,
+				7491D91C20275D700047339E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7491D91D20275D700047339E /* Build configuration list for PBXNativeTarget "QHChatScreenDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7491D91E20275D700047339E /* Debug */,
+				7491D91F20275D700047339E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7491D8F220275D700047339E /* Project object */;
+}
