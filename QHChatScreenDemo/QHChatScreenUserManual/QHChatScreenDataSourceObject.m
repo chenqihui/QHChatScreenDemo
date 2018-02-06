@@ -83,17 +83,17 @@
 }
 
 - (BOOL)isFoldLastChatDataOld:(NSDictionary *)chatDataOld new:(NSDictionary *)chatDataNew {
-//    BOOL bCompare = NO;
-//    NSString *routeTNew = chatDataNew[KEY_CHATSCREEN_ROUTER];
-//    if ([routeTNew isEqualToString:VALUE_ROUTER_CHATSCREEN_WELCOME] == YES) {
-//        bCompare = YES;
-//    }
-//    if (bCompare == YES) {
-//        NSString *routeTOld = chatDataOld[KEY_CHATSCREEN_ROUTER];
-//        if ([routeTNew isEqualToString:routeTOld]) {
-//            return YES;
-//        }
-//    }
+    BOOL bCompare = NO;
+    NSString *routeTNew = chatDataNew[KEY_CHATSCREEN_ROUTER];
+    if ([routeTNew isEqualToString:VALUE_ROUTER_CHATSCREEN_WELCOME] == YES) {
+        bCompare = YES;
+    }
+    if (bCompare == YES) {
+        NSString *routeTOld = chatDataOld[KEY_CHATSCREEN_ROUTER];
+        if ([routeTNew isEqualToString:routeTOld]) {
+            return YES;
+        }
+    }
     return NO;
 }
 

@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSArray *array = @[@"1"];
+    NSArray *array = @[@"QHChatScreenMan"];
     self.arData = [NSMutableArray arrayWithArray:array];
 }
 
