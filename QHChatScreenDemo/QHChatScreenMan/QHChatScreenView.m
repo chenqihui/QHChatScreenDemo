@@ -112,7 +112,7 @@ typedef NS_ENUM(NSUInteger, CellType) {
     self.chatDataList = [NSMutableArray new];
     self.chatDataTempList = [NSMutableArray new];
     self.bScrollRoll = YES;
-    self.chatQueue = dispatch_queue_create("com.qf.chatdata", DISPATCH_QUEUE_SERIAL);
+    self.chatQueue = dispatch_queue_create("com.chen.chatdata", DISPATCH_QUEUE_SERIAL);
     self.bInBottom = YES;
     self.bReturnScrollScreenView = NO;
     self.bReloadByTimer = NO;
@@ -159,13 +159,11 @@ typedef NS_ENUM(NSUInteger, CellType) {
                     return;
                 NSMutableAttributedString *chatContent = dataArray[0];
                 //            NSValue *frameValue = dataArray[1];
-    //            NSNumber *height = dataArray[1];
-    //            NSNumber *landscapeHeight = dataArray[2];
+                //            NSNumber *height = dataArray[1];
+                //            NSNumber *landscapeHeight = dataArray[2];
                 [self.chatDataList addObject:@[chatContent, chatData, @(CellTypeNormal)/*, frameValue*//*, height, landscapeHeight*/]];
             }
-//            if ([self.chatDelegate getIsAnchor]) {
-                [self p_reloadChatScreen:NO];
-//            }
+            [self p_reloadChatScreen:NO];
             [self.mainTableView reloadData];
             NSInteger counts = [self.mainTableView numberOfRowsInSection:0];
             if (counts > 0) {
