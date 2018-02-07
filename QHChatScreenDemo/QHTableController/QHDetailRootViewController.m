@@ -43,7 +43,7 @@
     [self p_setup];
     
     __weak typeof(self) weakSelf = self;
-    self.chatDataTimer = [NSTimer qheoc_scheduledTimerWithTimeInterval:1 block:^{
+    self.chatDataTimer = [NSTimer qheoc_scheduledTimerWithTimeInterval:0.2 block:^{
         [weakSelf chatDataTimerAction];
     } repeats:YES];
 }

@@ -16,10 +16,12 @@
 #define CHATCELL_IDENTIFIER @"chatGIfIdentifier"
 #define HIGHLIGHT_IDENTIFIER @"highlightIdentifier"
 
-#define MAX_CHATDATA 100
+#define MAX_CHATDATA 20//CGFLOAT_MAX//100
 #define HEIGHT_CONTENTLABEL 19
 
 #define TIME_REFRESH 0.7
+
+#define LAST_INDEXPATH [NSIndexPath indexPathForRow:(self.chatDataList.count - 1) inSection:0]
 
 typedef NS_ENUM(NSUInteger, CellType) {
     CellTypeNormal = 1,
@@ -99,7 +101,7 @@ typedef NS_ENUM(NSUInteger, CellType) {
         self.bSrollBottomAnimation = NO;
     }
     else {
-        self.bSrollBottomAnimation = NO;
+        self.bSrollBottomAnimation = YES;
     }
     
     UINib *cellNib = [UINib nibWithNibName:@"QHGifTextViewCell" bundle:nil];
@@ -168,7 +170,7 @@ typedef NS_ENUM(NSUInteger, CellType) {
             NSInteger counts = [self.mainTableView numberOfRowsInSection:0];
             if (counts > 0) {
                 NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(counts - 1) inSection:0];
-                [self.mainTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO/*self.bSrollBottomAnimation*/];
+                [self.mainTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:self.bSrollBottomAnimation];
             }
         }
     }
@@ -181,9 +183,9 @@ typedef NS_ENUM(NSUInteger, CellType) {
                         continue;
                     if ([self p_checkAnalyseData:data] == NO)
                         continue;
-                    if (self.chatDataTempList.count > MAX_CHATDATA) {
-                        [self.chatDataTempList removeObjectAtIndex:0];
-                    }
+//                    if (self.chatDataTempList.count > MAX_CHATDATA) {
+//                        [self.chatDataTempList removeObjectAtIndex:0];
+//                    }
                     [chatDataTempListTemp addObject:data];
                 }
                 if (chatDataTempListTemp.count > 0) {
@@ -195,9 +197,9 @@ typedef NS_ENUM(NSUInteger, CellType) {
             else {
                 if ([self p_checkAnalyseData:chatData] == NO)
                     return;
-                if (self.chatDataTempList.count > MAX_CHATDATA) {
-                    [self.chatDataTempList removeObjectAtIndex:0];
-                }
+//                if (self.chatDataTempList.count > MAX_CHATDATA) {
+//                    [self.chatDataTempList removeObjectAtIndex:0];
+//                }
                 [self.chatDataTempList addObject:chatData];
             }
         }
@@ -221,24 +223,40 @@ typedef NS_ENUM(NSUInteger, CellType) {
                 
                 if ([self p_isFoldEnter:chatDataIndex] == YES) {
                     [self.chatDataList replaceObjectAtIndex:self.chatDataList.count - 1 withObject:@[@(NO), chatDataIndex, @(CellTypeNormal)]];
+                    [self.mainTableView reloadRowsAtIndexPaths:@[LAST_INDEXPATH] withRowAnimation:UITableViewRowAnimationNone];
+                    [self.mainTableView scrollToRowAtIndexPath:LAST_INDEXPATH atScrollPosition:UITableViewScrollPositionTop animated:self.bSrollBottomAnimation];
                 }
                 else {
                     [self.chatDataList addObject:@[@(NO), chatDataIndex, @(CellTypeNormal)/*, frameValue*//*, height, landscapeHeight*/]];
+                    [self.mainTableView insertRowsAtIndexPaths:@[LAST_INDEXPATH] withRowAnimation:UITableViewRowAnimationNone];
+                    [self.mainTableView scrollToRowAtIndexPath:LAST_INDEXPATH atScrollPosition:UITableViewScrollPositionTop animated:self.bSrollBottomAnimation];
                 }
                 if (title != nil) {
                     [self.chatDataList addObject:@[title, chatDataIndex, @(CellTypeHighlight)]];
+                    [self.mainTableView insertRowsAtIndexPaths:@[LAST_INDEXPATH] withRowAnimation:UITableViewRowAnimationNone];
+                    [self.mainTableView scrollToRowAtIndexPath:LAST_INDEXPATH atScrollPosition:UITableViewScrollPositionTop animated:self.bSrollBottomAnimation];
                 }
                 chatDataIndex = nil;
             }
             [self.chatDataTempList removeAllObjects];
             if (self.chatDataList.count > MAX_CHATDATA) {
-                [self.chatDataList removeObjectsInRange:NSMakeRange(0, self.chatDataList.count - MAX_CHATDATA)];
+                NSInteger count = self.chatDataList.count - MAX_CHATDATA + 10;
+                [self.chatDataList removeObjectsInRange:NSMakeRange(0, count)];
+                NSMutableArray *ar = [NSMutableArray new];
+                for (int i = 0; i < count; i++) {
+                    [ar addObject:[NSIndexPath indexPathForRow:i inSection:0]];
+                }
+                [self.mainTableView deleteRowsAtIndexPaths:ar withRowAnimation:UITableViewRowAnimationNone];
+//                [self.chatDataList removeObjectAtIndex:0];
+//                [self.mainTableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+                
+                [self.mainTableView scrollToRowAtIndexPath:LAST_INDEXPATH atScrollPosition:UITableViewScrollPositionTop animated:NO];
             }
             
             self.bReloadByTimer = YES;
-            if (self.bControlTimerClose == NO) {
-                [self p_reloadChatScreen:YES];
-            }
+//            if (self.bControlTimerClose == NO) {
+//                [self p_reloadChatScreen:YES];
+//            }
             if (self.bInBottom == YES && self.hasNewChatDataView.hidden == NO) {
                 self.hasNewChatDataView.hidden = YES;
             }
@@ -347,6 +365,7 @@ typedef NS_ENUM(NSUInteger, CellType) {
         default: {
             QHGifTextViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CHATCELL_IDENTIFIER];
             cell.gifTextViewDelegate = self;
+            cell.gifTextView.attributedText = nil;
             NSMutableAttributedString *chatContent = nil;
             NSArray *contentDataArray = self.chatDataList[indexPath.row];
             //使用缓存
@@ -394,6 +413,12 @@ typedef NS_ENUM(NSUInteger, CellType) {
 //    else {
 //        return [self.chatDataList[indexPath.row][3] floatValue];
 //    }
+    
+//    NSInteger cellType = [self.chatDataList[indexPath.row][2] integerValue];
+//    if (cellType == CellTypeHighlight) {
+//        return 30;
+//    }
+    
     return UITableViewAutomaticDimension;
 }
 
