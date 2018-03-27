@@ -11,6 +11,10 @@
 
 @implementation QHChatScreenBaseUtil (Base)
 
++ (NSAttributedString *)toUsername:(NSString *)username {
+    return [QHChatScreenBaseUtil toContent:username color:NAME_YELLOW_COLOR_CHATSCREEN];
+}
+
 + (NSAttributedString *)toUserlevel:(NSInteger)userlevel {
     NSMutableAttributedString *userLevelAttr = [NSMutableAttributedString new];
     if (userlevel != 1) {

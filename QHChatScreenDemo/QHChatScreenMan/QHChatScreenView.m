@@ -16,8 +16,8 @@
 #define CHATCELL_IDENTIFIER @"chatGIfIdentifier"
 #define HIGHLIGHT_IDENTIFIER @"highlightIdentifier"
 
-#define MAX_CHATDATA 20//CGFLOAT_MAX//100
-#define HEIGHT_CONTENTLABEL 19
+#define MAX_CHATDATA 300//CGFLOAT_MAX
+#define DELETE_CHATDATA 100
 
 #define TIME_REFRESH 0.7
 
@@ -216,14 +216,13 @@ typedef NS_ENUM(NSUInteger, CellType) {
                 return;
             }
 //            self.bScrollRoll = NO;
-            
             for (int index = 0; index < self.chatDataTempList.count; index++) {
                 id chatDataIndex = self.chatDataTempList[index];
                 NSString *title = [self p_staticAnalyseData:chatDataIndex];
                 
                 if ([self p_isFoldEnter:chatDataIndex] == YES) {
                     [self.chatDataList replaceObjectAtIndex:self.chatDataList.count - 1 withObject:@[@(NO), chatDataIndex, @(CellTypeNormal)]];
-                    [self.mainTableView reloadRowsAtIndexPaths:@[LAST_INDEXPATH] withRowAnimation:UITableViewRowAnimationNone];
+                    [self.mainTableView reloadRowsAtIndexPaths:@[LAST_INDEXPATH] withRowAnimation:UITableViewRowAnimationAutomatic];
                     [self.mainTableView scrollToRowAtIndexPath:LAST_INDEXPATH atScrollPosition:UITableViewScrollPositionTop animated:self.bSrollBottomAnimation];
                 }
                 else {
@@ -240,16 +239,17 @@ typedef NS_ENUM(NSUInteger, CellType) {
             }
             [self.chatDataTempList removeAllObjects];
             if (self.chatDataList.count > MAX_CHATDATA) {
-                NSInteger count = self.chatDataList.count - MAX_CHATDATA + 10;
+                NSInteger count = self.chatDataList.count - MAX_CHATDATA + DELETE_CHATDATA;
                 [self.chatDataList removeObjectsInRange:NSMakeRange(0, count)];
-                NSMutableArray *ar = [NSMutableArray new];
-                for (int i = 0; i < count; i++) {
-                    [ar addObject:[NSIndexPath indexPathForRow:i inSection:0]];
-                }
-                [self.mainTableView deleteRowsAtIndexPaths:ar withRowAnimation:UITableViewRowAnimationNone];
+//                NSMutableArray *ar = [NSMutableArray new];
+//                for (int i = 0; i < count; i++) {
+//                    [ar addObject:[NSIndexPath indexPathForRow:i inSection:0]];
+//                }
+//                [self.mainTableView deleteRowsAtIndexPaths:ar withRowAnimation:UITableViewRowAnimationTop];
 //                [self.chatDataList removeObjectAtIndex:0];
 //                [self.mainTableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
                 
+                [self.mainTableView reloadData];
                 [self.mainTableView scrollToRowAtIndexPath:LAST_INDEXPATH atScrollPosition:UITableViewScrollPositionTop animated:NO];
             }
             
@@ -412,11 +412,6 @@ typedef NS_ENUM(NSUInteger, CellType) {
 //    }
 //    else {
 //        return [self.chatDataList[indexPath.row][3] floatValue];
-//    }
-    
-//    NSInteger cellType = [self.chatDataList[indexPath.row][2] integerValue];
-//    if (cellType == CellTypeHighlight) {
-//        return 30;
 //    }
     
     return UITableViewAutomaticDimension;

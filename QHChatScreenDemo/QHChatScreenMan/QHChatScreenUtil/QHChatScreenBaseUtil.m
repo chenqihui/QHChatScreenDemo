@@ -59,10 +59,6 @@
     [attr addAttributes:@{NSFontAttributeName: [QHChatScreenConfig sharedInstance].font, NSParagraphStyleAttributeName: paragraphStyle, NSShadowAttributeName: shadow} range:NSMakeRange(0, attr.length)];
 }
 
-+ (NSAttributedString *)toUsername:(NSString *)username {
-    return [QHChatScreenBaseUtil toContent:username color:NAME_YELLOW_COLOR_CHATSCREEN];
-}
-
 + (NSAttributedString *)toContent:(NSString *)content color:(UIColor *)color {
     
     if (!content)
